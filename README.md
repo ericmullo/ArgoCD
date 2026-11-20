@@ -23,6 +23,8 @@ La página se entrega mediante un ConfigMap dentro de `deployment.yml`; por eso 
 - Metrics Server operativo, con la API `metrics.k8s.io` disponible, para medir CPU y permitir el HPA.
 - Puerto `30080` libre en los nodos. Si está ocupado, cambie `nodePort` en `k8s/service.yml` y suba el cambio a Git.
 
+En Docker Desktop, abra la vista **Kubernetes**, seleccione **Create cluster** y espere a que el contexto `docker-desktop` esté disponible. La [guía oficial de Docker Desktop](https://docs.docker.com/desktop/use-desktop/kubernetes/) muestra la secuencia actual.
+
 Compruebe el contexto antes de aplicar nada:
 
 ```powershell
