@@ -1,0 +1,28 @@
+Fase: carga | Fecha: 2026-11-20 11:58:21 -05:00 | Contexto: docker-desktop
+Salida real de comandos kubectl, renderizada para el informe.
+
+> kubectl get application cooperativa-web -n argocd -o wide
+NAME              SYNC STATUS   HEALTH STATUS   REVISION                                   PROJECT
+cooperativa-web   Synced        Healthy         1fab8810a52a790b340931a28ad834e659169a66   default
+
+> kubectl get deployment,service,hpa,pods -n gitops-demo -l app=cooperativa-web
+NAME                              READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/cooperativa-web   3/3     3            3           9m50s
+
+NAME                      TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+service/cooperativa-web   NodePort   10.96.32.238   <none>        80:30080/TCP   9m50s
+
+NAME                                                  REFERENCE                    TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/cooperativa-web   Deployment/cooperativa-web   cpu: 41%/50%   2         5         3          9m50s
+
+NAME                                   READY   STATUS    RESTARTS   AGE
+pod/cooperativa-web-6c79cc54df-4l9cx   1/1     Running   0          9m50s
+pod/cooperativa-web-6c79cc54df-587sk   1/1     Running   0          9m50s
+pod/cooperativa-web-6c79cc54df-qvtlv   1/1     Running   0          65s
+
+> kubectl top pods -n gitops-demo -l app=cooperativa-web
+NAME                               CPU(cores)   MEMORY(bytes)   
+cooperativa-web-6c79cc54df-4l9cx   41m          8Mi             
+cooperativa-web-6c79cc54df-587sk   43m          8Mi             
+cooperativa-web-6c79cc54df-qvtlv   41m          8Mi
+
