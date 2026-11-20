@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cooperativa-web
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ericmullo/ArgoCD.git
+    targetRevision: main
+    path: k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gitops-demo
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - RespectIgnoreDifferences=true
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      name: cooperativa-web
+      jsonPointers:
+        - /spec/replicas

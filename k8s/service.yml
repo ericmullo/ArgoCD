@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cooperativa-web
+  labels:
+    app: cooperativa-web
+spec:
+  type: NodePort
+  selector:
+    app: cooperativa-web
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      nodePort: 30080
+      protocol: TCP
