@@ -27,7 +27,7 @@ data:
           <span class="badge">Aplicación web de demostración</span>
           <h1>Cooperativa 15 de Abril</h1>
           <p>Esta página se sirve desde Kubernetes y su configuración se administra con Argo CD.</p>
-          <p>Proyecto individual de despliegue GitOps.</p>
+          <p>Proyecto individual de despliegue GitOps. Sincronizado automáticamente desde GitHub.</p>
         </main>
       </body>
     </html>
