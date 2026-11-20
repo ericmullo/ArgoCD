@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="Arquitectura GitOps de la aplicación">
+  <rect width="1200" height="560" fill="#f4f8f5"/>
+  <text x="600" y="48" text-anchor="middle" font-family="Arial" font-size="28" font-weight="bold" fill="#123b25">Despliegue GitOps con Argo CD y Kubernetes</text>
+  <g font-family="Arial" text-anchor="middle">
+    <rect x="40" y="116" width="220" height="142" rx="16" fill="#fff" stroke="#27804a" stroke-width="3"/>
+    <text x="150" y="157" font-size="21" font-weight="bold" fill="#123b25">GitHub</text>
+    <text x="150" y="187" font-size="15" fill="#284536">ericmullo/ArgoCD</text>
+    <text x="150" y="215" font-size="15" fill="#284536">rama main · carpeta k8s/</text>
+    <rect x="345" y="116" width="220" height="142" rx="16" fill="#fff" stroke="#27804a" stroke-width="3"/>
+    <text x="455" y="157" font-size="21" font-weight="bold" fill="#123b25">Argo CD</text>
+    <text x="455" y="187" font-size="15" fill="#284536">sincronización automática</text>
+    <text x="455" y="215" font-size="15" fill="#284536">selfHeal · prune</text>
+    <rect x="650" y="116" width="500" height="390" rx="18" fill="#e4f3e8" stroke="#27804a" stroke-width="3"/>
+    <text x="900" y="155" font-size="22" font-weight="bold" fill="#123b25">Kubernetes · namespace gitops-demo</text>
+    <rect x="685" y="183" width="200" height="114" rx="12" fill="#fff" stroke="#40845a" stroke-width="2"/>
+    <text x="785" y="216" font-size="18" font-weight="bold" fill="#123b25">Deployment</text>
+    <text x="785" y="246" font-size="15" fill="#284536">2 réplicas iniciales</text>
+    <text x="785" y="269" font-size="15" fill="#284536">CPU 100m · RAM 64Mi</text>
+    <rect x="915" y="183" width="200" height="114" rx="12" fill="#fff" stroke="#40845a" stroke-width="2"/>
+    <text x="1015" y="216" font-size="18" font-weight="bold" fill="#123b25">Service</text>
+    <text x="1015" y="246" font-size="15" fill="#284536">NodePort 30080</text>
+    <text x="1015" y="269" font-size="15" fill="#284536">80 → 8080</text>
+    <rect x="685" y="340" width="200" height="114" rx="12" fill="#fff" stroke="#40845a" stroke-width="2"/>
+    <text x="785" y="373" font-size="18" font-weight="bold" fill="#123b25">HPA</text>
+    <text x="785" y="403" font-size="15" fill="#284536">CPU objetivo: 50 %</text>
+    <text x="785" y="426" font-size="15" fill="#284536">mín. 2 · máx. 5 Pods</text>
+    <rect x="915" y="340" width="200" height="114" rx="12" fill="#fff" stroke="#40845a" stroke-width="2"/>
+    <text x="1015" y="373" font-size="18" font-weight="bold" fill="#123b25">Metrics Server</text>
+    <text x="1015" y="403" font-size="15" fill="#284536">métricas de CPU</text>
+    <text x="1015" y="426" font-size="15" fill="#284536">para el HPA</text>
+    <text x="304" y="190" font-size="32" fill="#27804a">→</text>
+    <text x="610" y="190" font-size="32" fill="#27804a">→</text>
+    <text x="900" y="327" font-size="28" fill="#27804a">↕</text>
+  </g>
+  <text x="600" y="535" text-anchor="middle" font-family="Arial" font-size="14" fill="#526759">Diagrama de arquitectura · material explicativo, no captura de ejecución</text>
+</svg>
